@@ -16,6 +16,7 @@
 
 package com.hazelcast.aware.demo;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -53,6 +54,8 @@ public class HazelcastAwareDemo {
 			Long value2 = r.nextLong();
 			bean1a.getMap1().put(value1, "Value of " + value1);
 			bean1a.getMap2().put(value2, "Value of " + value2);
+			bean1a.getList1().add(r.nextLong());
+			bean1a.getList2().add(r.nextLong());
 		}
 		
 		System.out.println("HazelcastAwareBean1[1a] Map1: ");
@@ -62,6 +65,16 @@ public class HazelcastAwareDemo {
 		
 		System.out.println("HazelcastAwareBean1[1a] Map2: ");
 		printMap(bean1a.getMap2());
+		
+		System.out.println();
+		
+		System.out.println("HazelcastAwareBean1[1a] List1: ");
+		printList(bean1a.getList1());
+		
+		System.out.println();
+		
+		System.out.println("HazelcastAwareBean1[1a] List2: ");
+		printList(bean1a.getList2());
 		
 		System.out.println();
 		
@@ -75,6 +88,16 @@ public class HazelcastAwareDemo {
 		
 		System.out.println();
 		
+		System.out.println("HazelcastAwareBean1[1b] List1: ");
+		printList(bean1b.getList1());
+		
+		System.out.println();
+		
+		System.out.println("HazelcastAwareBean1[1b] List2: ");
+		printList(bean1b.getList2());
+		
+		System.out.println();
+		
 		System.out.println("HazelcastAwareBean2 Map1: ");
 		printMap(bean2.getMap1());
 		
@@ -82,6 +105,16 @@ public class HazelcastAwareDemo {
 		
 		System.out.println("HazelcastAwareBean2 Map2: ");
 		printMap(bean2.getMap2());
+		
+		System.out.println();
+		
+		System.out.println("HazelcastAwareBean2 List1: ");
+		printList(bean2.getList1());
+		
+		System.out.println();
+		
+		System.out.println("HazelcastAwareBean2 List2: ");
+		printList(bean2.getList2());
 		
 		System.out.println();
 	}
@@ -94,6 +127,19 @@ public class HazelcastAwareDemo {
 		else {
 			for (Long key : map.keySet()) {
 				System.out.println(key + ": " + map.get(key));
+			}
+		}	
+		System.out.println("==============================");
+	}
+	
+	private static void printList(List<Long> list) {
+		System.out.println("==============================");
+		if (list == null || list.isEmpty()) {
+			System.out.println("List is empty !");
+		}
+		else {
+			for (Long element : list) {
+				System.out.println(element);
 			}
 		}	
 		System.out.println("==============================");

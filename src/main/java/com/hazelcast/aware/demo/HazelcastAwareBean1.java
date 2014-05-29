@@ -16,10 +16,12 @@
 
 package com.hazelcast.aware.demo;
 
+import java.util.List;
 import java.util.Map;
 
 import com.hazelcast.aware.config.provider.annotation.HazelcastAwareClass;
 import com.hazelcast.aware.config.provider.annotation.HazelcastAwareMapField;
+import com.hazelcast.aware.config.provider.annotation.HazelcastAwareListField;
 
 /**
  * @author Serkan ÖZAL
@@ -34,8 +36,14 @@ public class HazelcastAwareBean1 {
 	@HazelcastAwareMapField
 	private Map<Long, String> map1;
 	
-	@HazelcastAwareMapField(mapName = "map2")
+	@HazelcastAwareMapField(name = "map2")
 	private Map<Long, String> map2;
+	
+	@HazelcastAwareListField
+	private List<Long> list1;
+	
+	@HazelcastAwareListField(name = "list2")
+	private List<Long> list2;
 	
 	public HazelcastAwareBean1() {
 		
@@ -55,6 +63,22 @@ public class HazelcastAwareBean1 {
 	
 	public void setMap2(Map<Long, String> map2) {
 		this.map2 = map2;
+	}
+	
+	public List<Long> getList1() {
+		return list1;
+	}
+	
+	public void setList1(List<Long> list1) {
+		this.list1 = list1;
+	}
+	
+	public List<Long> getList2() {
+		return list2;
+	}
+	
+	public void setList2(List<Long> list2) {
+		this.list2 = list2;
 	}
 	
 }
