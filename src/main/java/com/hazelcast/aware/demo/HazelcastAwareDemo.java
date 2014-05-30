@@ -20,11 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.hazelcast.aware.HazelcastAwarer;
-import com.hazelcast.core.HazelcastInstance;
 
 /**
  * @author Serkan ÖZAL
@@ -36,11 +32,6 @@ import com.hazelcast.core.HazelcastInstance;
 public class HazelcastAwareDemo {
 
 	public static void main(String[] args) throws Exception {
-		ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
-		
-		// Make sure Hazelcast instance is initialized
-		context.getBean(HazelcastInstance.class);
-		
 		HazelcastAwarer.makeHazelcastAware();
 		
 		HazelcastAwareBean1 bean1a = new HazelcastAwareBean1();

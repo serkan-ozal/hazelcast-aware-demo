@@ -17,14 +17,13 @@
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
         <maven.resources.plugin.version>2.4</maven.resources.plugin.version>
 		
-		<spring.version>3.2.2.RELEASE</spring.version>
 		<hazelcast.aware.version>1.0.0-SNAPSHOT</hazelcast.aware.version>
 		<hazelcast.version>3.2.1</hazelcast.version>
 
     </properties>
   
   	<build>
-        <finalName>spring-jdbc-roma-demo</finalName>
+        <finalName>hazelcast-aware-demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -64,21 +63,6 @@
 			<artifactId>hazelcast-all</artifactId>
 			<version>${hazelcast.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-context</artifactId>
-	        <version>${spring.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-context-support</artifactId>
-	        <version>${spring.version}</version>
-	    </dependency>
 	</dependencies>
     
     <repositories>
