@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import com.hazelcast.aware.HazelcastAwarer;
+import com.hazelcast.aware.HazelcastAware;
 
 /**
  * @author Serkan ÖZAL
@@ -29,11 +29,10 @@ import com.hazelcast.aware.HazelcastAwarer;
  * 		GitHub   : https://github.com/serkan-ozal
  * 		LinkedIn : www.linkedin.com/in/serkanozal
  */
-public class HazelcastAwareDemo {
+public class HazelcastAwareDemo extends HazelcastAware { 
+	// or call "HazelcastAwarer.makeHazelcastAware();" instead of extending from "HazelcastAware" class.
 
 	public static void main(String[] args) throws Exception {
-		HazelcastAwarer.makeHazelcastAware();
-		
 		HazelcastAwareBean1 bean1a = new HazelcastAwareBean1();
 		HazelcastAwareBean1 bean1b = new HazelcastAwareBean1();
 		HazelcastAwareBean2 bean2 = new HazelcastAwareBean2();
